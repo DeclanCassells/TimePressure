@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Limelight|Flamenco|Federo|Yesteryear|Josefin Sans|Spinnaker|Sansita One|Handlee|Droid Sans|Oswald:400,300,700" media="screen" rel="stylesheet" type="text/css" />
+    <style>
+      /* No content under the fixed bootstrap header. */
+      body {
+        padding-top: 60px;
+      }
+    </style>
+    <link href="stylesheets/bootstrap.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/bootstrap-responsive.min.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="stylesheets/tvot.css" media="screen" rel="stylesheet" type="text/css" />
+    <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'></script>
+    <script type="text/javascript">
+      navigator.setResolution(1920, 1080);
+    </script>
+  <script type="text/javascript" src="timer.js"></script>
+      <!-- Typekit fonts require an account and a kit containing the fonts used. see https://typekit.com/plans for details. <script type="text/javascript" src="//use.typekit.net/YOUR_KIT_ID.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+-->
+    <title>tvot</title>
+  </head>
+
+  <body>
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+<!--         <img src="images/bolt.png" class="pull-left image">
+ -->        <a class="brand" href="#">Tinj</a>
+        <ul class="nav pull-right">
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="container-fluid container-fluid-1">
+      <div class="container">
+        <div class="row-fluid">
+          <span class="span12">
+            <h1 class="heading">TimePressure</h1>
+            <p>Decide what to watch in 3 minutes or less</p>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="container container-1">
+      <div class="row-fluid">
+        <span class="span9">
+          <div class="page-header">
+            <h1>Countdown Timer -
+              <span id="seconds">60</span>
+            </h1>
+            <hr>
+            <button class="btn" type="button" id="start">Start</button>
+            <button class="btn" type="button" id="stop">Stop</button>
+            <button class="btn" type="button" id="reset">Reset</button>
+            <button class="btn" type="button" id="add">Add</button>
+            <button class="btn" type="button" id="final">Final</button>
+            <p>
+            <div class="progress">
+              <div class="bar" id="timer" style="width: 0%;"></div>
+            </div>
+          </div>
+          <div>
+            <row>
+              <h1>Choices</h1>
+              <ul class="thumbnails" id="choices" style="display: none">
+                <li class="span3">
+                  <div class="thumbnail">
+                    <img id="5121e933e4b6080200000027-img" src="http://content7.flixster.com/movie/11/16/91/11169181_det.jpg" width="180px" height="255">
+                    <div class="caption">
+                      <h3>Argo</h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3">
+                  <div class="thumbnail">
+                  <img id="5121e934e4b6080200000039-img" src="http://content6.flixster.com/movie/11/16/75/11167576_det.jpg" width="180px" height="255">
+                    <div class="caption">
+                      <h3>Django Unchained</h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3">
+                  <div class="thumbnail">
+                    <img id="5121e932e4b608020000000f-img" src="http://content8.flixster.com/movie/11/16/38/11163886_det.jpg" width="180px" height="255">
+                    <div class="caption">
+                      <h3>The Avengers</h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3">
+                  <div class="thumbnail">
+                    <img id="5121e932e4b6080200000015-img" src="http://content8.flixster.com/movie/11/16/67/11166738_det.jpg" width="180px" height="255">
+                    <div class="caption">
+                      <h3>Prometheus</h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3">
+                  <div class="thumbnail">
+                    <img id="5121e932e4b6080200000021-img" src="http://content7.flixster.com/movie/11/16/75/11167541_det.jpg" width="180px" height="255">
+                    <div class="caption">
+                      <h3>Zero Dark Thirty</h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3">
+                  <div class="thumbnail">
+                    <img id="5121e935e4b6080200000051-img" src="http://content7.flixster.com/movie/11/16/38/11163821_det.jpg" width="180px" height="255">
+                    <div class="caption">
+                      <h3>The Hunger Games</h3>
+                    </div>
+                  </div>
+                </li>
+                <li class="span3">
+                  <div class="thumbnail">
+                    <img id="513efe2e89a1ab0200000003-img" src="http://content6.flixster.com/movie/11/16/65/11166572_det.jpg" width="180px" height="255">
+                    <div class="caption">
+                      <h3>Silver Linings Playbook</h3>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+              <ul class="thumbnails" id="finalChoices" style="display: none">
+              </ul>
+            </row>
+          </div>
+        </span>
+        <span class="span3">
+          <div class="well">
+            <h2>Selected</h2>
+            <ul class="thumbnails" id="selected">
+<!--               <li>
+                <div class="thumbnail">
+                  <img id="5121e933e4b6080200000027-img" src="http://content7.flixster.com/movie/11/16/91/11169181_det.jpg" width="180px" height="255">
+                  <div class="caption">
+                    <h3>Argo</h3>
+                  </div>
+                </div>
+              </li>
+ -->            </ul>
+          </div>
+        </span>
+      </div>
+    </div>
+    <div class="container-fluid container-fluid-2">
+      <div class="container">
+        <div class="row-fluid">
+          <span class="span12">
+            <div class="pull-left">
+              <p>© Tinj</p>
+            </div>
+            <ul class="nav nav-pills pull-right">
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Privacy</a>
+              </li>
+              <li>
+                <a href="#">Terms Of Service</a>
+              </li>
+            </ul>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+
+</html>
